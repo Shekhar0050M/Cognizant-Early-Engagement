@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title></title>
+    </header>
+    <head>
+        <script>
+            const object = {
+                "First Name": "John",
+                "Last Name": "Stoke",
+                "Salary": 5000,
+                "Permanent Staff": true
+            };
+var body = document.getElementsByTagName("body");
+var table = document.createElement("table");
+var tHead = document.createElement("thead");
+var tBody = document.createElement("tbody");
+var row = tHead.insertRow(-1);
+var cell = row.insertCell(-1);
+cell.innerHTML = "<p>Property</p>";
+cell = row.insertCell(-1);
+cell.innerHTML = "Value";
+cell = row.insertCell(-1);
+cell.innerHTML = "Type";
+tHead.style.backgroundColor="#DEEAF6";
+tHead.style.fontWeight="bold";
+for (var element in object){
+    row = tBody.insertRow(-1);
+    cell = row.insertCell(-1);
+    cell.innerHTML = `${element}`;
+    cell = row.insertCell(-1);
+    cell.innerHTML = object[`${element}`];
+    cell = row.insertCell(-1);
+    cell.innerHTML = String(typeof(object[`${element}`])).charAt(0).toUpperCase()+String(typeof(object[`${element}`])).slice(1);
+}
+table.append(tHead);
+table.append(tBody);
+table.setAttribute("border","1")
+document.body.appendChild(table);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+
