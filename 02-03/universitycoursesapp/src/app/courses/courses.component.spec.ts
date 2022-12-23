@@ -22,10 +22,4 @@ describe('CoursesComponent', () => {
   });
 });
 
-var courses: {title:string, level:string}[] = [
-    {title:"Introduction to .NET Core",level:"Intermediate"},
-    {},
-    {},
-    {},
-    {},
-];
+
