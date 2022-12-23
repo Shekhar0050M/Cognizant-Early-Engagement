@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title></title>
+    </header>
+    <head>
+        <script>
+            employee = '[{"firstName": "John", "lastName": "Stoke", "Salary": 5000, "permanentStaff": true, "departmentId": 3,"departmentName": "payroll"}]';
+const object = JSON.parse(employee);
+var body = document.getElementsByTagName("body");
+var table = document.createElement("table");
+var tHead = document.createElement("thead");
+var tBody = document.createElement("tbody");
+var row = tHead.insertRow(-1);
+var cell = row.insertCell(-1);
+cell.innerHTML = "<p>Property</p>";
+cell = row.insertCell(-1);
+cell.innerHTML = "Value";
+cell = row.insertCell(-1);
+cell.innerHTML = "Type";
+tHead.style.backgroundColor="#DEEAF6";
+tHead.style.fontWeight="bold";
+row = tBody.insertRow(-1);
+cell = row.insertCell(-1);
+cell.innerHTML = "Department";
+cell = row.insertCell(-1);
+cell.innerHTML = "Object with id and department<br> name<br>ID = "+`${object[0].departmentId}`+"<br>Name = "+`${object[0].departmentName}`.charAt(0).toUpperCase()+`${object[0].departmentName}`.slice(1);
+cell = row.insertCell(-1);
+cell.innerHTML = "Object";
+row.style.verticalAlign="top";
+row.style.textAlign="left";
+table.append(tHead);
+table.append(tBody);
+table.setAttribute("border","1")
+document.body.appendChild(table);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+
