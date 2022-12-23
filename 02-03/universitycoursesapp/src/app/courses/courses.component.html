@@ -1,6 +1,10 @@
 <form>
-    <table>
-        <tr *ngFor='let course of courses;'>
+    <table border="1px " style="border-collapse: collapse;" >
+        <tr>
+            <td><b>Title</b></td>
+            <td><b>Level</b></td>
+        </tr>
+        <tr *ngFor="let course of courses;" [ngClass]="{'green':course.level==='Beginner','blue':course.level==='Intermediate','red':course.level==='Advanced','sizeup':true}">
             <td>{{course.title}}</td> <td>{{course.level}}</td>
         </tr>
     </table>
