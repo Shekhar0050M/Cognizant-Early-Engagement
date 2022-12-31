@@ -1,0 +1,30 @@
+<div style="border: 1px solid black; width: max-content;">
+    <p><b>Employee Details</b></p>
+    <b>ID:</b> {{ employeeId }}<br>
+    <b>Name:</b> {{ employeeName }}<br>
+    <b>Salary:</b> {{ employeeSalary }}<br>
+    <b>Permanent:</b> {{ permanent(employeePermanent) }}<br>
+    <b>Department Id:</b> {{ departmentId }}<br>
+    <b>Department Name:</b> {{ departmentName }}<br>
+    <b>Skills</b><br>
+    <form>
+        <table>
+            <tr>
+                <td><b>Skill Id</b></td><td><b>Skill Name</b></td>
+            </tr>
+            <tr>
+                <td>{{skills[0].skillId}}</td>
+                <td>{{skills[0].skillName}}</td>
+            </tr>
+            <tr>
+                <td>{{skills[1].skillId}}</td>
+                <td>{{skills[1].skillName}}</td>
+            </tr>
+            <tr>
+                <td>{{skills[2].skillId}}</td>
+                <td>{{skills[2].skillName}}</td>
+            </tr>
+        </table>
+    </form><br>
+    <b>Date of Birth: </b> {{ employeeDateOfBirth | date }}<br>
+</div>

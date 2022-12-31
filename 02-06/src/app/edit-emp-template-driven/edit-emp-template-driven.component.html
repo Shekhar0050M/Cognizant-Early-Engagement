@@ -1,0 +1,54 @@
+<p><b>Edit Employee</b></p>
+<br>
+<br>
+<form (ngSubmit)="onSubmit()">
+    <b>Name</b>
+    <br><br>
+    <input type="text" name="name" [(ngModel)]="employee.employeedet.employeeName" #name="ngModel" required="required"
+        minlength="2" maxlength="10">
+    <!--{{employee.employeedet.employeeName}}-->
+    <div *ngIf="name.invalid && (name.touched || name.dirty)">
+        <p *ngIf="name.errors?.['required']" class="error-message">Name is required</p>
+        <p *ngIf="name.errors?.['minlength']" class="error-message">Name must be at least 2 characters long</p>
+        <p *ngIf="name.errors?.['maxlength']" class="error-message">Name can have a maximum of 10 characters</p>
+    </div>
+    <!-- <div>name.invalid - {{name.invalid}}</div>
+    <div>name.touched - {{name.touched}}</div>
+    <div>name.dirty - {{name.dirty}}</div>
+    <div>name.errors.required - {{name.errors?.['required']}}</div>
+    <div>name.errors.minlength - {{name.errors?.['minlength'] | json}}</div> -->
+    <br><br>
+    <b>Salary</b>
+    <br><br>
+    <input type="number" name="number" [(ngModel)]="employee.employeedet.employeeSalary" #name="ngModel"
+        required="required">
+    <br>
+    <b>Is Permanent or not?</b>
+    <br><br>
+    <input type="radio" id="yes">
+    <label for="yes">Yes</label>
+    <input type="radio" id="no" values="no">
+    <label for="no">No</label>
+    <br><br>
+    <b>Department</b>
+    <br>
+    <select (change)="employee.department.departmentId">
+        <option *ngFor="let department of departments;" [value]="department.departmentId"
+            [selected]="employee.department.departmentId === department.departmentId">
+            {{department.departmentName}}
+        </option>
+    </select>
+    <br><br>
+    <button type="submit" [disabled]="!empForm">Save</button>
+    <!-- <button type="submit">Save</button> -->
+</form>
+<br>
+<div class="block">
+    <strong>Employee Model</strong><br>
+    <pre>{{employee | json }}</pre>
+</div>
+
+<div class="block">
+    <strong>Angular Generated Form Model</strong><br>
+    <pre>{{empForm | json}}</pre>
+</div>
