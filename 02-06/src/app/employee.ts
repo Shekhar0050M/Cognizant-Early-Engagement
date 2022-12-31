@@ -1,7 +1,7 @@
 export interface Employee{
-    employeeId:number,
-    employeeName:string,
-    employeeSalary:number,
-    employeePermanent:boolean,
-    employeeDateOfBirth:Date
+    id:number,
+    name:string,
+    salary:number,
+    permanent:boolean,
+    dateOfBirth:Date
 }

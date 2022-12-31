@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-emp-template-driven.component';
-import { ViewEmpComponent } from './view-emp/view-emp.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { QuantityIncrementComponent } from './quantity-increment/quantity-increment.component';
+import { ViewEmpComponent } from './view-emp/view-emp.component';
 
 const appRoutes: Routes = [
   {path: 'view-emp', component: ViewEmpComponent},
@@ -21,9 +21,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     EditEmpTemplateDrivenComponent,
-    ViewEmpComponent,
     EditEmpComponent,
-    QuantityIncrementComponent
+    QuantityIncrementComponent,
+    ViewEmpComponent
   ],
   imports: [
     BrowserModule,
