@@ -10,4 +10,8 @@ import { ActivatedRoute } from "@angular/router";
 export class EditEmpReactiveComponent {
   employee: Employee;
   constructor(private route : ActivatedRoute) { }
+  ngOnInit() {
+    const employeeId = this.route.snapshot.paramMap.get('id');
+    console.log(employeeId);
+  }  
 }
