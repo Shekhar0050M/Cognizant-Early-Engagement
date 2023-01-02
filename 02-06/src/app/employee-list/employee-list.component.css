@@ -1,0 +1,5 @@
+div{
+    border: 1px solid blue;
+    display: inline-table;
+    justify-content: space-between;
+}

@@ -1,0 +1,14 @@
+<h3><b>Employees List</b></h3>
+<br>
+<p>
+    <label for="search">Search</label>
+    <input name="search" type="text" [(ngModel)]="searchKey" (keyup)="search()">
+</p>
+<div>
+    <div *ngFor="let employee of filteredEmployeesList">
+        <p>{{employee.name}}</p>
+        <br>
+        {{employee.salary | currency:'INR':true:'1.2-2'}}
+        <br>   
+    </div>
+</div>

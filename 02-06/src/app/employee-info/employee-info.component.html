@@ -1,0 +1,5 @@
+<div *ngFor="let employee of employee">
+    {{employee}}
+    <br>
+    <a [routerLink]="['/edit-emp-reactive', employee.id]">Edit</a>
+</div>
