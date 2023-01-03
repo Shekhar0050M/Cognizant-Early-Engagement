@@ -1,0 +1,9 @@
+<app-employee-detail [employee]="employee"></app-employee-detail>
+<p>Employee No : {{employee.empNo}}</p>
+<p>Name
+    : <input [(ngModel)]="employee.name"></p>
+<p>Address : <input [(ngModel)]="employee.address"></p>
+<p>city : <input [(ngModel)]="employee.city"></p>
+<p>State : <input [(ngModel)]="employee.state"></p>
+<p>Country : <input [(ngModel)]="employee.country"></p>
+<button (click)="updateEmployee(employee)">Update</button>

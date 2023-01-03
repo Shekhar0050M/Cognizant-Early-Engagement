@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let employee of employeeList">
+      {{employee.name}} - {{employee.address}}
+      <button (click)="showDetails(employee)">Edit</button>
+    </li>
+  </ul>
