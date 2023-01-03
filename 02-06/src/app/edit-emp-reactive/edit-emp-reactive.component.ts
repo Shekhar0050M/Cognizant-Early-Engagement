@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Employee } from '../employee';
 import { ActivatedRoute } from "@angular/router";
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-edit-emp-reactive',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class EditEmpReactiveComponent {
   employee: Employee;
-  constructor(private route : ActivatedRoute) { }
+  constructor(private route : ActivatedRoute, private employeeService : EmployeeService) { }
   ngOnInit() {
     const employeeId = this.route.snapshot.paramMap.get('id');
     console.log(employeeId);

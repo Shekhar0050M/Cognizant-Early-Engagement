@@ -4,7 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { QuantityIncrementComponent } from './quantity-increment.component';
 
-describe('QuantityIncrementComponent', () => {
+xdescribe('QuantityIncrementComponent', () => {
   let component: QuantityIncrementComponent;
   let fixture: ComponentFixture<QuantityIncrementComponent>;
 

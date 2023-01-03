@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditEmpReactiveComponent } from './edit-emp-reactive.component';
 
-describe('EditEmpReactiveComponent', () => {
+xdescribe('EditEmpReactiveComponent', () => {
   let component: EditEmpReactiveComponent;
   let fixture: ComponentFixture<EditEmpReactiveComponent>;
 

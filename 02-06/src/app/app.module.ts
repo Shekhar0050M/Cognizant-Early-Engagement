@@ -11,6 +11,7 @@ import { ViewEmpComponent } from './view-emp/view-emp.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import { EditEmpReactiveComponent } from './edit-emp-reactive/edit-emp-reactive.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   {path: 'view-emp', component: ViewEmpComponent},
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     ViewEmpComponent,
     EmployeeListComponent,
     EmployeeInfoComponent,
-    EditEmpReactiveComponent
+    EditEmpReactiveComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
