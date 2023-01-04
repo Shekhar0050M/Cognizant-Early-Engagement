@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let user in users">
+        {{user.first_name}} {{user.last_name}}
+    </li>
+</ul>>
+<button onclick="register()">Register</button>
+<p *ngIf="errorMessage">{{ errorMessage }}</p>
