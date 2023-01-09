@@ -1,3 +1,4 @@
+
 package com.cognizant.springlearn;
 
 import java.text.ParseException;
@@ -10,6 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.cognizant.springlearn.model.Country;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,9 +23,9 @@ public class SpringLearnApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringLearnApplication.class, args);
-		displayDate();
-		displayCountry();
-		displayCountries();
+//		displayDate();
+//		displayCountry();
+//		displayCountries();
 	}
 
 	public static void displayDate() {
@@ -52,6 +55,7 @@ public class SpringLearnApplication {
 	public static void displayCountries() {
 		LOGGER.info("START");
 		ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
+		@SuppressWarnings("unchecked")
 		ArrayList<Country> countries = (ArrayList<Country>) context.getBean("countryList", ArrayList.class);
 		for (int i = 0; i < countries.size(); i++) {
 			LOGGER.debug(countries.get(i).getName());
