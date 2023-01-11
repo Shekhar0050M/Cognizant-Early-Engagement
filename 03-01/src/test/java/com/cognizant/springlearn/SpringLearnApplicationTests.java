@@ -1,37 +1,41 @@
 package com.cognizant.springlearn;
 
-import static org.junit.Assert.assertNotNull;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
 
 import com.cognizant.springlearn.controller.CountryController;
 
-@SpringBootTest
-@AutoConfigureMockMvc
+import static org.junit.Assert.assertNotNull;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
+
 public class SpringLearnApplicationTests {
 
 	@Autowired
 	private CountryController countryController;
-	
+
 	@Test
 	public void contextLoads() {
 		assertNotNull(countryController);
 	}
-	
+
 	@Autowired
 	private MockMvc mvc;
-	
+
 	@Test
 	public void testGetCountry() throws Exception {
+		ResultActions actions = mvc.perform(get("/country"));
+		actions.andExpect(status().isOk());
+	}
+
+	@Test
+	public void getCountry() throws Exception {
 		ResultActions actions = mvc.perform(get("/country"));
 		actions.andExpect(status().isOk());
 		actions.andExpect(jsonPath("$.code").exists());
@@ -41,9 +45,10 @@ public class SpringLearnApplicationTests {
 	}
 
 	@Test
-	public void testGetCountryException() throws Exception{
-		ResultActions actions = mvc.perform(get("/country/is"));
+	public void testGetCountryException() throws Exception {
+		ResultActions actions = mvc.perform(get("/country/i"));
 		actions.andExpect(status().isBadRequest());
-		actions.andExpect(status().reason("Country not found"));
+		actions.andExpect(status().reason("Country Not found"));
 	}
+
 }
