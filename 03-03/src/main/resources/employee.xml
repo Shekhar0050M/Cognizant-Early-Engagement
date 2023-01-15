@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="departmentOne" class="com.cognizant.employee.model.Department">
+		<property name="id" value="1" />
+		<property name="name" value="dept1" />
+	</bean>
+	<bean id="departmentTwo" class="com.cognizant.employee.model.Department">
+		<property name="id" value="2" />
+		<property name="name" value="dept2" />
+	</bean>
+	<bean id="departmentThree" class="com.cognizant.employee.model.Department">
+		<property name="id" value="3" />
+		<property name="name" value="dept3" />
+	</bean>
+	<bean id="departmentList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="departmentOne"/>
+				<ref bean="departmentTwo"/>
+				<ref bean="departmentThree"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="skillOne" class="com.cognizant.employee.model.Skill">
+		<property name="id" value="1" />
+		<property name="name" value="HTML" />
+	</bean>
+	<bean id="skillTwo" class="com.cognizant.employee.model.Skill">
+		<property name="id" value="2" />
+		<property name="name" value="CSS" />
+	</bean>
+	<bean id="skillThree" class="com.cognizant.employee.model.Skill">
+		<property name="id" value="3" />
+		<property name="name" value="Java" />
+	</bean>
+	<bean id="skillList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="skillOne"/>
+				<ref bean="skillTwo"/>
+				<ref bean="skillThree"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="employeeOne" class="com.cognizant.employee.model.Employee">
+		<property name="id" value="1" />
+		<property name="name" value="emp1" />
+		<property name="department">
+			<ref bean="departmentOne" />
+		</property>
+		<property name="permanent" value="Yes" />
+		<property name="skills" ref="skillList"/>
+	</bean>
+	<bean id="employeeTwo" class="com.cognizant.employee.model.Employee">
+		<property name="id" value="2" />
+		<property name="name" value="emp2" />
+		<property name="department">
+			<ref bean="departmentOne" />
+		</property>
+		<property name="permanent" value="Yes" />
+		<property name="skills" ref="skillList"/>
+	</bean>
+	<bean id="employeeThree" class="com.cognizant.employee.model.Employee">
+		<property name="id" value="3" />
+		<property name="name" value="emp3" />
+		<property name="department">
+			<ref bean="departmentOne" />
+		</property>
+		<property name="permanent" value="Yes" />
+		<property name="skills" ref="skillList"/>
+	</bean>
+	<bean id="employeeFour" class="com.cognizant.employee.model.Employee">
+		<property name="id" value="4" />
+		<property name="name" value="emp4"/>
+		<property name="department">
+			<ref bean="departmentOne" />
+		</property>
+		<property name="permanent" value="Yes" />
+		<property name="skills" ref="skillList"/>
+	</bean>
+	<bean id="employeeList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="employeeOne" />
+				<ref bean="employeeTwo" />
+				<ref bean="employeeThree" />
+				<ref bean="employeeFour" />
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
