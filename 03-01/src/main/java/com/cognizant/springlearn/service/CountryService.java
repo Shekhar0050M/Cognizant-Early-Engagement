@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
 import com.cognizant.springlearn.model.Country;
 import com.cognizant.springlearn.service.exception.CountryNotFoundException;
 
+@Service
 public class CountryService {
 	public Country getCountry(String code) throws CountryNotFoundException{
 		ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
